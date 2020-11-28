@@ -48,27 +48,7 @@ export const flatDataRequest = (payload) => async (dispatch) => {
   let url = "";
   if (payload.resident_type && payload.block && payload.page && payload.limit) {
     url = `http://localhost:5000/api/apartment/getFlat?apartment_id=${payload.apartment_id}&resident_type=${payload.resident_type}&block=${payload.block}&page=${payload.page}&limit=${payload.limit}`;
-  } else if (payload.resident_type && payload.block && payload.page) {
-    url = `http://localhost:5000/api/apartment/getFlat?apartment_id=${payload.apartment_id}&resident_type=${payload.resident_type}&block=${payload.block}&page=${payload.page}`;
-  } else if (payload.resident_type && payload.block && payload.limit) {
-    url = `http://localhost:5000/api/apartment/getFlat?apartment_id=${payload.apartment_id}&resident_type=${payload.resident_type}&block=${payload.block}&limit=${payload.limit}`;
-  } else if (payload.resident_type && payload.block) {
-    url = `http://localhost:5000/api/apartment/getFlat?apartment_id=${payload.apartment_id}&resident_type=${payload.resident_type}&block=${payload.block}`;
-  } else if (payload.resident_type && payload.page && payload.limit) {
-    url = `http://localhost:5000/api/apartment/getFlat?apartment_id=${payload.apartment_id}&resident_type=${payload.resident_type}&page=${payload.page}&limit=${payload.limit}`;
-  } else if (payload.resident_type && payload.page) {
-    url = `http://localhost:5000/api/apartment/getFlat?apartment_id=${payload.apartment_id}&resident_type=${payload.resident_type}&page=${payload.page}`;
-  } else if (payload.resident_type) {
-    url = `http://localhost:5000/api/apartment/getFlat?apartment_id=${payload.apartment_id}&resident_type=${payload.resident_type}`;
-  } else if (payload.block && payload.page && payload.limit) {
-    url = `http://localhost:5000/api/apartment/getFlat?apartment_id=${payload.apartment_id}&block=${payload.block}&page=${payload.page}&limit=${payload.limit}`;
-  } else if (payload.block && payload.page) {
-    url = `http://localhost:5000/api/apartment/getFlat?apartment_id=${payload.apartment_id}&block=${payload.block}&page=${payload.page}`;
-  } else if (payload.block) {
-    url = `http://localhost:5000/api/apartment/getFlat?apartment_id=${payload.apartment_id}&block=${payload.block}`;
-  } else {
-    url = `http://localhost:5000/api/apartment/getFlat?apartment_id=${payload.apartment_id}`;
-  }
+  } 
 
   return await fetch(url, {
     method: "GET",
