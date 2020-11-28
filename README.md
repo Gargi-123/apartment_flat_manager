@@ -1,0 +1,1 @@
+# apartment_flat_manager
